@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import Navbar from "../Navbar/navbar";
+import Navbar from "../Navbar/Navbar";
 import axios from "axios";
 const LoansDetail = () => {
   const [searchParams] = useSearchParams();
@@ -19,7 +19,7 @@ const LoansDetail = () => {
     async function getLoanData() {
       try {
         const response = await axios.get(
-          `http://172.16.3.228:9600/api/v1/loan/loan/${id}`,
+          `http://197.155.71.138:8001/api/v1/loan/loan/${id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -67,8 +67,8 @@ const LoansDetail = () => {
                   <td>{loanData?.totalAmount}</td>
                   <td>{loanData?.frequencyPeriod}</td>
                   <td>{loanData?.repaymentPeriod}</td>
-                  <td>{loanData?.disbursementDate}</td>
-                  <td>{loanData?.nextRepaymentDate}</td>
+                  <td>{new Date(loanData?.disbursementDate).toLocaleDateString()}</td>
+                  <td>{new Date(loanData?.nextRepaymentDate).toLocaleDateString()}</td>
                 </tbody>
               </table>
             </div>
@@ -92,7 +92,7 @@ const LoansDetail = () => {
                       <td>{loans?.principalAmount?.toFixed(2)}</td>
                       <td>{loans?.interestAmount?.toFixed(2)}</td>
 
-                      <td>{loans?.repaymentDate}</td>
+                      <td>{new Date(loans?.repaymentDate).toLocaleDateString()}</td>
                     </tr>
                   ))}
                 </tbody>

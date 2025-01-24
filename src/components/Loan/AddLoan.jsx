@@ -1,5 +1,5 @@
 import React, { useState ,useEffect} from "react";
-import Navbar from "../Navbar/navbar";
+import Navbar from "../Navbar/Navbar";
 import axios from "axios";
 import Swal from "sweetalert2";
 
