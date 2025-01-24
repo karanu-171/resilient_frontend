@@ -15,7 +15,7 @@ const ShowLoan = () => {
   useEffect(()=>{
     async function getAllLoans() {
      try {
-      const  response  =  await axios.get('http://197.155.71.138:8001/api/v1/loan/all',{
+      const  response  =  await axios.get('https://elegant-magic-production-49f6.up.railway.app/api/v1/loan/all',{
         headers: {
           Authorization: `Bearer ${token}` 
         }});

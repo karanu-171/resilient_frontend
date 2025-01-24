@@ -19,7 +19,7 @@ const LoansDetail = () => {
     async function getLoanData() {
       try {
         const response = await axios.get(
-          `http://197.155.71.138:8001/api/v1/loan/loan/${id}`,
+          `https://elegant-magic-production-49f6.up.railway.app/api/v1/loan/loan/${id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
